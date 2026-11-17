@@ -64,16 +64,13 @@ void LevelOne::initialise()
 
     mGameState.reward = new Entity(
         {
-            mGameState.map->getRightBoundary() -
-                1.5f * TILE_DIMENSION,
+            mGameState.map->getLeftBoundary() +
+                (54.0f + 0.5f) * TILE_DIMENSION,
             mGameState.map->getTopBoundary() +
-                1.5f * TILE_DIMENSION
+                (6.0f + 0.5f) * TILE_DIMENSION
         },
         { 48.0f, 48.0f },
         "assets/game/tile_0061.png",
-        SINGLE,
-        { 1, 1 },
-        {},
         NONE
     );
 
@@ -162,13 +159,12 @@ void LevelOne::update(float deltaTime)
 void LevelOne::render()
 {
     ClearBackground(ColorFromHex(mBGColourHexCode));
-    renderBackground(ColorFromHex("#5dade2"));
 
     mGameState.man->render();
     mGameState.enemy->render();
     mGameState.secondEnemy->render();
-    mGameState.reward->render();
     mGameState.map->render();
+    mGameState.reward->render();
 }
 
 void LevelOne::shutdown()

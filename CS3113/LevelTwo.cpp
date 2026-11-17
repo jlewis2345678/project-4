@@ -63,16 +63,13 @@ void LevelTwo::initialise()
 
     mGameState.reward = new Entity(
         {
-            mGameState.map->getRightBoundary() -
-                1.5f * TILE_DIMENSION,
+            mGameState.map->getLeftBoundary() +
+                (38.0f + 0.5f) * TILE_DIMENSION,
             mGameState.map->getTopBoundary() +
-                1.5f * TILE_DIMENSION
+                (10.0f + 0.5f) * TILE_DIMENSION
         },
         { 48.0f, 48.0f },
         "assets/game/tile_0061.png",
-        SINGLE,
-        { 1, 1 },
-        {},
         NONE
     );
 
@@ -158,13 +155,12 @@ void LevelTwo::update(float deltaTime)
 void LevelTwo::render()
 {
     ClearBackground(ColorFromHex(mBGColourHexCode));
-    renderBackground(ColorFromHex("#3498db"));
 
     mGameState.man->render();
     mGameState.enemy->render();
     mGameState.secondEnemy->render();
-    mGameState.reward->render();
     mGameState.map->render();
+    mGameState.reward->render();
 }
 
 void LevelTwo::shutdown()

@@ -36,14 +36,11 @@ protected:
     GameState   mGameState{};
     Vector2     mOrigin;
     const char *mBGColourHexCode = "#000000";
-    Texture2D   mBackgroundTexture{};
-
-    void renderBackground(Color tint = WHITE);
 
 public:
     Scene();
     Scene(Vector2 origin, const char *bgHexCode);
-    virtual ~Scene();
+    virtual ~Scene() {}
 
     virtual void initialise() = 0;
     virtual void update(float deltaTime) = 0;

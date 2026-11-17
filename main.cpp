@@ -1,12 +1,3 @@
-/**
-* Author: Janae Lewis
-* Assignment: Rise of the AI
-* Date due: [mm/dd/yyyy]
-* I pledge that I have completed this assignment without
-* collaborating with anyone else, in conformance with the
-* NYU School of Engineering Policies and Procedures on
-* Academic Misconduct.
-**/
 #include "CS3113/Scene.h"
 #include "CS3113/LevelOne.h"
 #include "CS3113/LevelTwo.h"
@@ -117,22 +108,22 @@ void initialise()
     SetMasterVolume(1.0f);
 
     gScenes[LEVEL_ONE] =
-        new LevelOne(ORIGIN, "#5dade2");
+        new LevelOne(ORIGIN, "#123B66");
 
     gScenes[LEVEL_TWO] =
-        new LevelTwo(ORIGIN, "#3498db");
+        new LevelTwo(ORIGIN, "#185A8D");
 
     gScenes[START_SCREEN] =
-        new StartScreen(ORIGIN, "#85c1e9");
+        new StartScreen(ORIGIN, "#0B1F3A");
 
     gScenes[LOSE_SCREEN] =
-        new LoseScreen(ORIGIN, "#154360");
+        new LoseScreen(ORIGIN, "#0A2A43");
 
     gScenes[WIN_SCREEN] =
-        new WinScreen(ORIGIN, "#2e86c1");
+        new WinScreen(ORIGIN, "#2D8CBA");
 
     gScenes[LEVEL_THREE] =
-        new LevelThree(ORIGIN, "#1f618d");
+        new LevelThree(ORIGIN, "#2274A5");
 
 
     switchToScene(START_SCREEN);

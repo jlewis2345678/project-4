@@ -47,8 +47,8 @@ void LevelThree::initialise()
     float sizeRatio = 48.0f / 64.0f;
 
     mGameState.man = new Entity(
-        { mGameState.map->getLeftBoundary() +(2.0f + 0.25f) * TILE_DIMENSION, 
-           mGameState.map->getTopBoundary() +(14.0f + 0.25f) * TILE_DIMENSION   }, // position
+        { mGameState.map->getLeftBoundary() +(2.0f + 0.5f) * TILE_DIMENSION, 
+           mGameState.map->getTopBoundary() +(14.0f + 0.5f) * TILE_DIMENSION   }, // position
         { 64.0f * sizeRatio, 64.0f },              // scale
         "assets/game/character.png",                // texture file address
         ATLAS,                                      // single image or atlas?
@@ -64,16 +64,11 @@ void LevelThree::initialise()
 
     mGameState.reward = new Entity(
         {
-            mGameState.map->getRightBoundary() -
-                1.5f * TILE_DIMENSION,
-            mGameState.map->getTopBoundary() +
-                1.5f * TILE_DIMENSION
+            mGameState.map->getRightBoundary() - (1.0f + 0.5f) * TILE_DIMENSION,
+            mGameState.map->getTopBoundary() + 0.5f * TILE_DIMENSION
         },
         { 48.0f, 48.0f },
         "assets/game/tile_0061.png",
-        SINGLE,
-        { 1, 1 },
-        {},
         NONE
     );
 
@@ -168,7 +163,6 @@ void LevelThree::update(float deltaTime)
 void LevelThree::render()
 {
     ClearBackground(ColorFromHex(mBGColourHexCode));
-    renderBackground(ColorFromHex("#1f618d"));
 
     mGameState.man->render();
     mGameState.map->render();
